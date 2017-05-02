@@ -355,12 +355,13 @@ angular.module('ng-walkthrough', [])
                             //    parent = parent.offsetParent;
                             //}
                         }
-                        var sameAncestorForFocusElementAndWalkthrough = getSameAncestor(element, focusElement);
-                        while (sameAncestorForFocusElementAndWalkthrough) {
-                            left = left - sameAncestorForFocusElementAndWalkthrough.offsetLeft;
-                            top = top - sameAncestorForFocusElementAndWalkthrough.offsetTop;
-                            sameAncestorForFocusElementAndWalkthrough = sameAncestorForFocusElementAndWalkthrough.offsetParent;
-                        }
+                        
+                        // var sameAncestorForFocusElementAndWalkthrough = getSameAncestor(element, focusElement);
+                        // while (sameAncestorForFocusElementAndWalkthrough) {
+                        //     left = left - sameAncestorForFocusElementAndWalkthrough.offsetLeft;
+                        //     top = top - sameAncestorForFocusElementAndWalkthrough.offsetTop;
+                        //     sameAncestorForFocusElementAndWalkthrough = sameAncestorForFocusElementAndWalkthrough.offsetParent;
+                        // }
                         return { top:top, left: left, height: height, width: width};
                     };
 
