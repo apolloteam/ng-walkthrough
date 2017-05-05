@@ -244,11 +244,13 @@ angular.module('ng-walkthrough', [])
                             scope.forceCaptionLocation = "BOTTOM";
                         }
 
-                        var iconLocation =
-                            "position: absolute;" +
-                            "left:" + iconLeftWithPadding + "px;" +
-                            "top:" + iconTopWithPadding + "px;";
-                        scope.walkthroughIconElement.attr('style', iconLocation);
+                        if (scope.walkthroughIconElement) {
+                            var iconLocation =
+                                "position: absolute;" +
+                                "left:" + iconLeftWithPadding + "px;" +
+                                "top:" + iconTopWithPadding + "px;";
+                            scope.walkthroughIconElement.attr('style', iconLocation);
+                        }
                     };
 
                     var setArrowAndText = function (pointSubjectLeft, pointSubjectTop, pointSubjectWidth, pointSubjectHeight, paddingLeft) {
@@ -293,8 +295,9 @@ angular.module('ng-walkthrough', [])
                             '/>' +
                             '</svg>';
 
-
-                        scope.walkthroughArrowElement.append(arrowSvgDom);
+                        if (scope.walkthroughArrowElement) {
+                            scope.walkthroughArrowElement.append(arrowSvgDom);
+                        }
                     };
 
                     var setTipIconPadding = function (iconPaddingLeft, iconPaddingTop) {
@@ -364,7 +367,7 @@ angular.module('ng-walkthrough', [])
                             //     sameAncestorForFocusElementAndWalkthrough = sameAncestorForFocusElementAndWalkthrough.offsetParent;
                             // }
                         }
-                        
+
                         return { top: top, left: left, height: height, width: width };
                     };
 
