@@ -289,7 +289,7 @@ angular.module('ng-walkthrough', [])
                             '<path d="M2,1 L2,10 L10,6 L2,2" style="fill:#fff;" />' +
                             '</marker>' +
                             '</defs>' +
-                            '<path d="M' + startLeft + ',' + startTop + ' Q' + startLeft + ',' + endTop + ' ' + endLeft + ',' + endTop + '"' +
+                            '<path d="M' + startLeft + ',' + (startTop - (PADDING_HOLE * 2)) + ' Q' + startLeft + ',' + endTop + ' ' + (endLeft - (PADDING_HOLE * 5)) + ',' + endTop + '"' +
                             'style="stroke:#fff; stroke-width: 2px; fill: none;' +
                             'marker-end: url(#arrow);"/>' +
                             '/>' +
@@ -410,6 +410,7 @@ angular.module('ng-walkthrough', [])
                             $log.error('No element found with selector: ' + focusElementSelector);
                             focusElement = null;
                         }
+                        
                         var angularElement = (focusElement) ? angular.element(focusElement) : null;
                         if (angularElement && angularElement.length > 0) {
                             var offsetCoordinates = getOffsetCoordinates(angularElement);
